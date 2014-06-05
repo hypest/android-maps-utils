@@ -49,6 +49,7 @@ public class ClusterManager<T extends ClusterItem> implements GoogleMap.OnCamera
 
     public ClusterManager(Context context, GoogleMap map, MarkerManager markerManager) {
         mMap = map;
+        mPreviousCameraPosition = mMap != null ? mMap.getCameraPosition() : null;
         mMarkerManager = markerManager;
         mClusterMarkers = markerManager.newCollection();
         mMarkers = markerManager.newCollection();
